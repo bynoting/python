@@ -1,0 +1,1 @@
+update t_codediction set MAINTFLAG = '0' where codetype='control_protocal'

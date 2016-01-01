@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}毛豆 List{% endblock %}
+
+{% block content %}
+
+<p><a href="{% url "index_url" %}">返回首页</a></p>
+
+<h2>相册集</h2>
+{% if PostList_ctx %}
+<table>
+    <tr>
+        <th>标题</th>
+        <th>相册</th>
+        <th>说明</th>
+    </tr>
+    {% for item in PostList_ctx %}
+    <tr>
+        <td><i>{{ item.title}}</i></td>
+        <td>
+            {% if item.photo_set.count %}
+            <a href="{% url "postdetail_url" item.id %}">
+                <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+            </a>
+            {% else %}
+            (No photos currently uploaded)
+            {% endif %}
+        </td>
+        <td>{{ item.body }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are currently no items to display.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+
+<p><a href="{% url "postlist_url" %}">&laquo; 返回相册集</a></p>
+
+<h2>{{ object.title }}</h2>
+<p>{{ object.body }}</p>
+
+<h3>图片库</h3>
+<table>
+    <tr>
+        <th>标题</th>
+        <th>图样</th>
+        <th>说明</th>
+    </tr>
+    {% for photo in object.photo_set.all %}
+    <tr>
+        <td><i>{{ photo.title }}</i></td>
+        <td>
+            <!-- -->
+            <a href="{% url "photodetail_url" pk=photo.id %}" 原图>
+                <img src="{{ photo.image.thumb_url }}" />
+            </a>
+        </td>
+        <td>{{ photo.capition }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

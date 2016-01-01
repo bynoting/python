@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "I:\Research\python\DeleteiniFile.py", line 20, in <module>
+    deleteFile()
+  File "I:\Research\python\DeleteiniFile.py", line 13, in deleteFile
+    os.remove( os.path.abspath(fname ) )
+WindowsError: [Error 2] : 'I:\\Research\\python\\_desktop.ini'
+I:\Research\python

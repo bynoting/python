@@ -1,0 +1,205 @@
+!SESSION 2013-03-21 21:04:15.564 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product -data I:\Research\python\liqiangpy -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.ddms 4 0 2013-03-21 21:04:21.931
+!MESSAGE DDMS files not found: D:\adt-bundle-windows-x86-20130219\eclipse\platform-tools\adb.exe D:\adt-bundle-windows-x86-20130219\eclipse\tools\hprof-conv.exe D:\adt-bundle-windows-x86-20130219\eclipse\tools\traceview.bat 
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:04:25.194
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:23:46.951 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -data I:\Research\python\liqiangpy -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:23:55.874
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:26:22.796 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -product com.android.ide.eclipse.adt.package.product -data I:\Research\python\liqiangpy -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:26:29.940
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:29:00.240 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product I:\Research\python\liqiangpy\.pydevproject
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product I:\Research\python\liqiangpy\.pydevproject
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:29:14.125
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:29:35.664 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product I:\Research\python\liqiangpy\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product I:\Research\python\liqiangpy\.project
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:29:43.621
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:33:10.615 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:33:18.057
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-21 21:41:30.980 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-03-21 21:41:45.379
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-03-21 21:41:45.379
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\lq'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.core 4 4 2013-03-21 21:42:29.294
+!MESSAGE Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 500 for URL: https://ping.aptana.com/ping.php
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:72)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2013-03-22 09:18:45.313 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -data J:\Research\python\liqiangpy -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-03-22 09:18:53.087
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-03-22 09:18:53.139
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gtlq'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-03-22 09:19:46.083
+!MESSAGE Failed to load properties file for project 'lqAndridf'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-03-22 09:19:46.093
+!MESSAGE Failed to load properties file for project 'lqAndridf'
+
+!ENTRY org.eclipse.wst.sse.core 4 4 2013-03-22 09:19:57.846
+!MESSAGE exception deleting old tasks
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/lqAndridf/AndroidManifest.xml' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:847)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner$1.run(WorkspaceTaskScanner.java:277)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner.replaceTaskMarkers(WorkspaceTaskScanner.java:308)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner.scanFile(WorkspaceTaskScanner.java:448)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner.internalScan(WorkspaceTaskScanner.java:215)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner.internalScan(WorkspaceTaskScanner.java:210)
+	at org.eclipse.wst.sse.core.internal.tasks.WorkspaceTaskScanner.scan(WorkspaceTaskScanner.java:337)
+	at org.eclipse.wst.sse.core.internal.tasks.TaskScanningJob.run(TaskScanningJob.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2013-03-22 09:19:57.847
+!MESSAGE Resource '/lqAndridf/AndroidManifest.xml' does not exist.

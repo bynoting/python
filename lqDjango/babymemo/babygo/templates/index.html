@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<h2>毛豆萌萌哒!</h3>
+<p>小毛豆的萌照！哇咔咔</p>
+
+<h3>展示</h3>
+<table>
+    <tr>
+    {% for item in post_list_context|slice:":3" %}
+        <td>
+            <a href="{% url "postdetail_url" pk=item.id %}"> <b>{{ item}}</b>
+            <!--<a href="{{item.get_absolute_url}}"><b>{{ item}}</b>-->
+            {% if item.photo_set.count %}
+                <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+            {% else %}
+                <span>No photos (yet)</span>
+            {% endif %}
+            </a>
+        </td>
+    {% endfor %}
+    </tr>
+</table>
+    <p><a href="{%url "postlist_url"%}">查看所有的;</a></p> <!--Todo: 1.5 后 视图方法要用引号！ -->
+{% endblock %}

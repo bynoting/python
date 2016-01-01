@@ -1,0 +1,8 @@
+1.开关机
+a> 执行脚本update_t_sys_parameter.sql
+b> 将控制设备(即与无线发射机相连的3型机)的sn及连接串口号写入表am_services_device
+c> 去web网站修改上面的串口的波特率为57600
+
+2.广播
+a> 执行脚本Broadcast.sql,默认广播控制动作码：开始 - 5 停止 - 6
+b> 如果动作码有变更，请修改T_SYS_PARAMETER表中变量BroadcastActionCode的值

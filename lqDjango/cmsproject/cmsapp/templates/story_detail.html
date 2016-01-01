@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    <h2><a href="{% url "cms-category" slug=object.category.slug %}">{{ object.category }}</a></h2>
+     <div id="story-body">
+        {{ object.html_content|safe }}
+        <p class="small">Updated {{ story.modified }}</p>
+    </div>
+{% endblock %}

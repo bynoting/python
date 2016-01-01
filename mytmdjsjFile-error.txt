@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "G:\Research\python\pyFFmpegTd.py", line 65, in <module>
+    main()
+  File "G:\Research\python\pyFFmpegTd.py", line 48, in main
+    input("It's ok!")
+  File "<string>", line 0
+    
+   ^
+SyntaxError: unexpected EOF while parsing
