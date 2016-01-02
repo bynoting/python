@@ -37,3 +37,6 @@ def search():
 				dfname =  os.path.join(rootpath,fname)
 				printResult2file(dfname)
 
+				print "test"
+
+
