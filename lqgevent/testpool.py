@@ -23,14 +23,18 @@ class SocketPool( object):
 	def server(self):
 		server = StreamServer(('0.0.0.0', 8000), connection_handler)
 		server.serve_forever()
+	def connection_handler(self,socket,address):
+		socket.send("server send to client ")
+		socket.close()
+
 
 if __name__ == "__main__":
 	socketpool = SocketPool()
-	socket = context.socket(zmq.REQ)
-	socket("tcp://127.0.0.1:5000")
-	socketpool.listen(socket)
+	clientsocket = context.socket(zmq.REQ)
+	clientsocket.connect("tcp://127.0.0.1:5000")
+	socketpool.listen(clientsocket)
 	for a in range(100):
-		socketpool.add_handler(socket)
+		socketpool.add_handler(socketpool)
 
 
 
