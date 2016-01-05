@@ -6,8 +6,8 @@ import gevent
 from gevent import Greenlet
 
 # 简单的socket服务模型，
-def server():
-    server = StreamServer(('0.0.0.0', 8000), shandler)
+def server(port):
+    server = StreamServer(('0.0.0.0', port), shandler)
     server.serve_forever()
 def shandler(socket,address):
     print address
@@ -16,7 +16,10 @@ def shandler(socket,address):
 
     socket.send("good")
 
- 
 if __name__ == '__main__':
-    t = gevent.spawn(server())
-    t.start()
+    mypool = Pool(2)
+    mypool.map(server,[8000,8001,8002])
+    print "map starting ..."
+    # mypool.kill()
+    # t = gevent.spawn(server())
+    # t.start()
