@@ -8,19 +8,21 @@ from gevent import Greenlet
 
 class SocketPool(object):
 	def __init__(self):
-		self.pool = Pool(1000)
-		self.server()
+		self.pool = Pool(1)
+		self.pool.add(self.server())
 
 	# 适合聊天室的按回车发送文本方式
 	def listen( self, socket,address):
 		f = socket.makefile()
 		print "listen"
+
 		while True:
 			name = f.readline().strip()
 			print name
 
 	def listen2( self, socket,address):
 		print "listen2"
+		print self.pool.free_count()
 		while True:
 			name =socket.recv(1010).strip()
 			print name
