@@ -1,4 +1,4 @@
-#coding='gbk'
+# coding='gbk'
 import os
 import os.path
 for root, dirs, files in os.walk('F:\\svn\\����֧��\\��˾��Ʒ\\GTVM'):
