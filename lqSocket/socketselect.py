@@ -32,7 +32,7 @@ outputs = []
 message_queues = {}
  
 #A optional parameter for select is TIMEOUT
-timeout = 20
+timeout = 200
  
 while inputs:
     print "waiting for next event"
@@ -46,6 +46,7 @@ while inputs:
         if s is server:
             # A "readable" socket is ready to accept a connection
             connection, client_address = s.accept()
+            print type(connection)
             print "    connection from ", client_address
             connection.setblocking(0)
             inputs.append(connection)
