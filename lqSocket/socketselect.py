@@ -20,7 +20,7 @@ server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR  , 1)
 server_address= ('127.0.0.1',10001)
 server.bind(server_address)
  
-server.listen(10)
+server.listen(1000)
  
 #sockets from which we except to read
 inputs = [server]
@@ -46,7 +46,7 @@ while inputs:
         if s is server:
             # A "readable" socket is ready to accept a connection
             connection, client_address = s.accept()
-            print type(connection)
+            # print type(connection)
             print "    connection from ", client_address
             connection.setblocking(0)
             inputs.append(connection)

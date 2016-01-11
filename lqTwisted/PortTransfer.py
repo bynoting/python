@@ -1,4 +1,4 @@
-#coding=gbk
+# coding=gbk
 __author__ = 'http://www.cnblogs.com/zhangjing0502/archive/2012/05/30/2526552.html'
 # 需求：将windows的远程桌面做一个端口转发。
 #
@@ -15,50 +15,51 @@ from twisted.internet.protocol import Factory,ClientFactory
 from twisted.python import log, logfile
 
 class Transfer(Protocol):
-        def __init__(self):
-                pass
-        def connectionMade(self):
-                logshow ("connected")
-                c = ClientCreator(reactor,Clienttransfer)
-                c.connectTCP("192.168.4.2",3389).addCallback(self.set_protocol) #连接并返回refer，设置callback
-                self.transport.pauseProducing() # 代理服务暂停数据接收
+    def __init__(self):
+        pass
+    def connectionMade(self):
+        logshow ("connected")
+        # 在不需要工厂时可以直接使用这个类来产生仅使用一次的客户端连接。这时，协议对象之间没有共享状态，也不需要重新连接。
+        c =  ClientCreator(reactor,Clienttransfer)
+        c.connectTCP("192.168.4.2",3389).addCallback(self.set_protocol) #连接并返回refer，设置callback 参数是新protocol,add之后立即callback？
+        self.transport.pauseProducing() # 代理服务暂停数据接收
 
-        def set_protocol(self,p): #给转发客户端目标设置protocal
-                self.client = p
-                p.set_protocol(self)
+    def set_protocol(self,p): #给转发客户端目标设置protocol，相互引用
+        self.client = p
+        p.set_protocol(self)
 
-        def dataReceived(self,data):
-                logshow ("server data" + data)
-                self.client.transport.write(data) # 服务收到数据后由客户端转发数据。此data 为远程客户机发来数据，client 为转发客户端目标
+    def dataReceived(self,data):
+        logshow ("server data" + data)
+        self.client.transport.write(data) # 服务收到数据后由客户端转发数据。此data 为远程客户机发来数据，client 为转发客户端目标
 
-        def connectionLost(self,reason):
-                self.transport.loseConnection()
-                self.client.transport.loseConnection()
+    def connectionLost(self,reason):
+        self.transport.loseConnection()
+        self.client.transport.loseConnection()
 
 class Clienttransfer(Protocol):
-        def __init__(self):
-                pass
+    def __init__(self):
+        pass
 
-        def set_protocol(self,p):
-                self.server = p    #server 为本地监听服务
-                self.server.transport.resumeProducing()
-                pass
-        def dataReceived(self,data):# 此data为被监控主机返回数据
-                logshow ("send data " + data)
-                self.server.transport.write(data) # 返回给远程客户端数据
-                pass
+    def set_protocol(self,p):
+        self.server = p    #server 为本地监听服务
+        self.server.transport.resumeProducing()
+        pass
+    def dataReceived(self,data):# 此data为被监控主机返回数据
+        logshow ("send data " + data)
+        self.server.transport.write(data) # 返回给远程客户端数据
+        pass
 def logshow(msg):
-        print msg
+    print msg
 
 
 def main():
-        logshow ("ready run()")
-        factory = Factory()
-        factory.protocol = Transfer
-        reactor.listenTCP(9012,factory)
-        reactor.run()
+    logshow ("ready run()")
+    factory = Factory()
+    factory.protocol = Transfer
+    reactor.listenTCP(9012,factory)
+    reactor.run()
 
 
 if __name__=="__main__":
-        main()
+    main()
 

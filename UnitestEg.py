@@ -42,4 +42,8 @@ def argstest(a,b=1):
 argstest(1,3)
 
 
+print (x+800 for x in xrange(0,10))
+
+
+
 
