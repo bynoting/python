@@ -11,6 +11,7 @@ class SendMsgObj(Protocol):
 		pass
 	def connectionMade(self):
 		print "connectionMade"
+		self.transport.write("hello i m client")
 		pass
 	def set_protocol(self):
 		print "send someting"
@@ -25,7 +26,7 @@ class SendMsgObj(Protocol):
 print "created"
 c = ClientCreator(reactor,SendMsgObj)
 
-d = c.connectTCP("58.30.23.19",80)
+d = c.connectTCP("127.0.0.1",8000)
 
 d.addCallback(sendmsg)
 reactor.run()
