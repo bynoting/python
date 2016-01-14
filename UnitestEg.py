@@ -45,5 +45,21 @@ argstest(1,3)
 print (x+800 for x in xrange(0,10))
 
 
+import Queue
+
+q = Queue.LifoQueue()
+
+print q.qsize()
+q.put("nidaye")
+q.put(["good","bakd"])
+print q.qsize()
+print q.get()
+print q.qsize()
+
+q.
+
+
+
+
 
 
