@@ -11,6 +11,6 @@ urlpatterns = patterns('',
     url(r'^', include('babygo.urls')), # 坑：不能用 r'^$'
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.STATIC_ROOT}), # 媒体目录下的路由
+    url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.STATIC_ROOT}), # 媒体目录下的路由,（路由地址，view，参数）
 )
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
