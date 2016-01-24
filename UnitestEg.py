@@ -1,4 +1,4 @@
-# coding=utf-8
+# coding=gbk
 '''
 Created on 2013-9-8
 
@@ -32,8 +32,8 @@ print  float('12213.120')
 raw_input()
 
 
-str = "/"
-print str[1:]
+strs = "/"
+print strs[1:]
 
 def argstest(a,b=1):
     print a,
@@ -55,11 +55,4 @@ q.put(["good","bakd"])
 print q.qsize()
 print q.get()
 print q.qsize()
-
-q.
-
-
-
-
-
 

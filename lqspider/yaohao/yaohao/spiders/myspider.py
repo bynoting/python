@@ -19,7 +19,7 @@ class MySpider(CrawlSpider):
         print response.url
         sel = Selector(response)
         print "+++++++++++++++++++++++"
-        print sel.xpath('//*[@id="getValidCode"]/img)').extract()
+        print sel.xpath('//*[@id="getValidCode"]').extract()
         return None
 
     def parse_item(self, response):
