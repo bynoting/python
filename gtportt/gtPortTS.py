@@ -3,10 +3,11 @@ import sys
 import threading
 import socket
 import optparse
-
 import urllib2,json
-import re
+import Re
 import os
+import time
+import string
 
 if os.name == 'nt':
     PFENCODE = 'GBK'
@@ -23,6 +24,7 @@ USAGE = "用法: 输入端口号(0到65535的整数)，多个以空格分开"
 
 PORTS = ""
 def parse_input():
+    printmsg("测试开始")
     inputstr = raw_input("%s 请输入："%USAGE)
     inputstr_list =  inputstr.split()
     global PORTS
@@ -33,39 +35,51 @@ def parse_input():
     except Exception, e:
         return None
 
+def printmsgwrap(func):
+    def wraper(args):
+        print string.join([time.strftime('%Y-%m-%d %H:%M:%S'),args],' ')
+    return wraper
+@printmsgwrap
+def printmsg(msg):
+    pass
+
+
 
 def parse_ipport(ports):
     if not ports:
-        print "输入异常，%s"%USAGE
+        printmsg ("输入异常，%s"%USAGE)
         raise
     return map(parse_ports, ports)
 
 def parse_ports(port):
-    if not re.match(
+    if not Re.match(
             "^([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5])(-([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5]))?$",
              port):
-        print "输入端口[%s]不符合规则 %s"%(port,USAGE)
+        printmsg( "输入端口[%s]不符合规则 %s"%(port,USAGE) )
         raise
     return port
 
 def sendSelfIP():
     try :
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(10)
         s.connect((GTIPA, GTPOR))
         s.sendall(PORTS)
         s.close()
         return True
     except Exception ,e:
-        print "无法连接国通网络服务:%s:异常代码：%s \n"%(str((GTIPA,GTPOR)),e.args[0])
+        printmsg( "无法连接国通网络服务:%s:异常代码：%s \n"%(str((GTIPA,GTPOR)),e.args[0]) )
         return None
 
 def runServer(port):
     try:
-        print "开始启动[端口:%s]的测试监听.... "%port
+        printmsg( "开始启动[端口:%s]的测试监听.... "%port )
         s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         s.bind((IPADRESS,int(port) ))
         s.listen(10)
+        s.settimeout(10)
         while(True):
+
             conn,addr=s.accept()
             # print '[端口:%s] connected by %s \n'%(port,str(addr))
             # while(1):
@@ -73,10 +87,10 @@ def runServer(port):
             # print '[端口:%s] 接收数据 %s \n'% (port,data)
             conn.send ('Done.')
             # print '[端口:%s] 发送数据正常！\n'% port
-            print '[端口:%s] 可正常使用！\n'% port
+            printmsg( '[端口:%s] 可正常使用！\n'% port )
         conn.close()
     except Exception ,e:
-        print "[端口:%s]的测试失败%s \n" %(port,e.message)
+        printmsg( "[端口:%s]的测试失败%s \n" %(port,e.message) )
 
 
 def main():
@@ -85,6 +99,7 @@ def main():
 
     ts = []
 
+    r = None
     if ports :
         r = sendSelfIP()
 
@@ -95,10 +110,10 @@ def main():
             t.start()
             ts.append(t)
 
-        for t in ts:
-            t.join()
-
-    raw_input("运行中止!")
+        for t in ts: #todo： python join 不会导致线程循环等待
+            t.join(10)
+    printmsg("运行结束!")
+    raw_input()
 
 if __name__ == "__main__":
 
@@ -115,7 +130,7 @@ def parse_args():
         parser.exit()
 
     def parse_ports(port):
-        if not re.match("^([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5])(-([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5]))?$",port):
+        if not Re.match("^([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5])(-([1-9]\d{0,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5]))?$", port):
             print parser.format_help()
             parser.exit()
         return port
@@ -127,11 +142,11 @@ def getIP(port):
     ipinfo = " w_ip = "
     try:
         ipinfo = urllib2.urlopen('http://www.whereismyip.com').read()
-        w_ip = re.search('\d+\.\d+\.\d+\.\d+',ipinfo).group(0)
+        w_ip = Re.search('\d+\.\d+\.\d+\.\d+', ipinfo).group(0)
     except:
         try:
             ipinfo = urllib2.urlopen('http://ip138.com/ip2city.asp').read()
-            w_ip = re.search('\d+\.\d+\.\d+\.\d+',ipinfo).group(0)
+            w_ip = Re.search('\d+\.\d+\.\d+\.\d+', ipinfo).group(0)
         except Exception ,e:
             print str(e)
             return None

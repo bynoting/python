@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Bootstrap for running a Django app under Google App Engine.
+"""Bootstrap for running a Django gtport under Google App Engine.
 
 The site-specific code is all in other files: settings.py, urls.py,
 models.py, views.py.  And in fact, only 'settings' is referenced here

@@ -2,7 +2,7 @@
 # $Id: tkhello2.py,v 1.1 2000/02/21 09:04:25 wesc Exp $
 #
 # tkhello2.py -- "Hello World!" 2 in Tkinter:
-#        - "Hello World!" with just a button (which quits the app)
+#        - "Hello World!" with just a button (which quits the gtport)
 #
 # created by wesc 00/02/20
 #

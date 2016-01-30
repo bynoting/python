@@ -26,7 +26,7 @@ def fromImport(mod, attr=None):
 if __name__=='__main__':
     Tk().withdraw()
 
-    # app name; module and function name(s)
+    # gtport name; module and function name(s)
     dispatch = {
 	'Excel': 'excel',
 	'Word': 'word',
@@ -34,7 +34,7 @@ if __name__=='__main__':
 	'PowerPoint': 'ppoint',
     }
 
-    # run each main function for each app
+    # run each main function for each gtport
     for eachApp in dispatch:
 	if askyesno(eachApp, "Launch %s demo?" % eachApp):
 	    target = dispatch[eachApp]
