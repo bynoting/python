@@ -1,4 +1,4 @@
-
+# coding=gbk
 class P(object):
 	def __init__(self):
 		print "P is init"
@@ -16,14 +16,35 @@ class C(P):
 		super(C,self).show()
 		print "CCCC"
 class N(object):
+	r = object
+
 	def show(self):
+		instans = self.r() 
+		print type(instans)
+		instans.prt()
 		print "I am N"
 
-def objectShow(aC):
+
+def objectShow(ac):
 	ac.show()
+
+
+class reftest(object):
+	def __init__(self):
+		print "reftest is ref!"
+	def prt(self):
+		print "reftest is prt ref!!!"
+
 if __name__ == "__main__":
 	o = N()
+	# ¶¯Ì¬ÊµÀý»¯
+	o.r = reftest
 	o.show() # duck type
+
+
+	# inst = o.r()
+	# inst.prt()
+
 	o.cvar=2000
 	# C.cvar = 10000
 
