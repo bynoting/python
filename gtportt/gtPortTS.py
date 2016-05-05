@@ -17,12 +17,16 @@ else:
 GTIPA ="58.30.28.131"
 GTPOR = 9015
 
-IPADRESS = "localhost"
+IPADRESS = "0.0.0.0"
 PORT = [9999]
 
 USAGE = "用法: 输入端口号(0到65535的整数)，多个以空格分开"
 
 PORTS = ""
+
+
+mutex = threading.Lock()
+
 def parse_input():
     printmsg("测试开始")
     inputstr = raw_input("%s 请输入："%USAGE)
@@ -37,7 +41,9 @@ def parse_input():
 
 def printmsgwrap(func):
     def wraper(args):
+        mutex.acquire()
         print string.join([time.strftime('%Y-%m-%d %H:%M:%S'),args],' ')
+        mutex.release()
     return wraper
 @printmsgwrap
 def printmsg(msg):
@@ -75,11 +81,12 @@ def runServer(port):
     try:
         printmsg( "开始启动[端口:%s]的测试监听.... "%port )
         s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((IPADRESS,int(port) ))
         s.listen(10)
-        s.settimeout(10)
+        s.settimeout(5)
         while(True):
-
+            #print s
             conn,addr=s.accept()
             # print '[端口:%s] connected by %s \n'%(port,str(addr))
             # while(1):
@@ -88,6 +95,7 @@ def runServer(port):
             conn.send ('Done.')
             # print '[端口:%s] 发送数据正常！\n'% port
             printmsg( '[端口:%s] 可正常使用！\n'% port )
+            break
         conn.close()
     except Exception ,e:
         printmsg( "[端口:%s]的测试失败%s \n" %(port,e.message) )
@@ -111,13 +119,15 @@ def main():
             ts.append(t)
 
         for t in ts: #todo： python join 不会导致线程循环等待
-            t.join(10)
+            t.join()
     printmsg("运行结束!")
     raw_input()
+
 
 if __name__ == "__main__":
 
     main()
+
 
 # not used
 def parse_args():

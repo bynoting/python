@@ -16,7 +16,7 @@ else:
 GTIPA ="58.30.28.131"
 GTPOR = 9015
 
-IPADRESS = "localhost"
+IPADRESS = "0.0.0.0"
 PORT = [9999]
 
 USAGE = "用法: 输入端口号(0到65535的整数)，多个以空格分开"
@@ -51,6 +51,7 @@ def parse_ports(port):
 def sendSelfIP():
     try :
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(10)
         s.connect((GTIPA, GTPOR))
         s.sendall(PORTS)
         s.close()
@@ -63,8 +64,10 @@ def runServer(port):
     try:
         print "开始启动[端口:%s]的测试监听.... "%port
         s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((IPADRESS,int(port) ))
         s.listen(10)
+        s.settimeout(5)
         while(True):
             conn,addr=s.accept()
             # print '[端口:%s] connected by %s \n'%(port,str(addr))
@@ -74,6 +77,7 @@ def runServer(port):
             conn.send ('Done.')
             # print '[端口:%s] 发送数据正常！\n'% port
             print '[端口:%s] 可正常使用！\n'% port
+            break
         conn.close()
     except Exception ,e:
         print "[端口:%s]的测试失败%s \n" %(port,e.message)

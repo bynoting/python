@@ -28,6 +28,7 @@ class InnerServer(object):
 		printmsg( "¶Ë¿Ú¡¾%s¡¿¿ªÊ¼²âÊÔ"%str(ipport))
 		try:
 			clientSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+			clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 			clientSocket.connect(ipport)
 			clientSocket.send("it's server msg")
 			s = clientSocket.recv(1024)

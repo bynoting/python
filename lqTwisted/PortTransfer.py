@@ -19,6 +19,7 @@ class Transfer(Protocol):
         pass
     def connectionMade(self):
         logshow ("connected")
+
         # 在不需要工厂时可以直接使用这个类来产生仅使用一次的客户端连接。这时，协议对象之间没有共享状态，也不需要重新连接。
         c =  ClientCreator(reactor,Clienttransfer)
         c.connectTCP("192.168.4.2",3389).addCallback(self.set_protocol) #连接并返回refer，设置callback 参数是新protocol,add之后立即callback？
