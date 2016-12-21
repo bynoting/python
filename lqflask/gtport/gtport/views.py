@@ -8,9 +8,9 @@ import os
 
 
 
-sys.path.append(os.path.join(os.getcwd(),os.pardir,os.pardir,"gtportt"))
+sys.path.append(os.path.join(os.getcwd(),os.pardir,os.pardir,"gtport"))
 
-from gtportt import gtPortSS
+#from gtport import gtPort
 
 @app.route('/', methods = ['GET', 'POST'])
 #@app.route('/index')

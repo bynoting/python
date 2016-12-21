@@ -15,7 +15,7 @@ def createNewFile():
             if not data:
                 print len(data1)
                 break
-            F.write(data)
+            F.write(data):
             data1 =data
 
 def readFileType():
