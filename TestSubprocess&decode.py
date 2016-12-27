@@ -1,14 +1,15 @@
+#coding=gbk
 __author__ = 'lq'
 
 import subprocess
-# Todo: subprocess Popen :è¯»å–å‘½ä»¤è¾“å‡ºçš„ç»“æœ
+# Todo: subprocess Popen :¶ÁÈ¡ÃüÁîÊä³öµÄ½á¹û
 o = subprocess.Popen('ping 127.0.0.1',stdout=subprocess.PIPE,shell=True)
 print "subprocess..."
 
 s = o.stdout.readline()
 
 while(s):
-    #TODOï¼š python é»˜è®¤ç¼–ç ä¸ºunicodeï¼ŒdecodeæŠŠunicodeâ€”ã€‹gbk
+    #TODO£º python Ä¬ÈÏ±àÂëÎªunicode£¬decode°Ñunicode¡ª¡·gbk
     print s.decode("gbk")
 
     s = o.stdout.readline()

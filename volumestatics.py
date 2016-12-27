@@ -1,13 +1,15 @@
 #!/usr/bin/env python
+#coding=utf8
 import os
 
 def Statistics(aRoot):
-    vloume_limit = 200  #200M
-    for rootpath,dirname,filename in os.walk(aRoot):
-        for file in filename:
-            filesize  = round((os.path.getsize(file)/1024/1024),4)
-            print "filename is "+ file + " filesize is " + str(filesize)
-       # if filesize > 500*1000
+    vloume_limit = 200 *1024 * 1024 #200M
+
+    for rootpath,dirs,files in os.walk(aRoot):
+        for file in files:
+            filesize  = os.path.getsize(file)
+            print "filename is {fname},filesize={fsize}".format(fname=file,fsize=filesize)
+       # if filesize > 5
 
 if __name__ =="__main__":
     import traceback
