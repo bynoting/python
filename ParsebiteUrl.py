@@ -23,38 +23,39 @@ def crawl():
 	return keys
 
 def judgekey(keystr):
-    keys = ''
+    key = ''
     for a in keystr:
         if a.isdigit():
-		    keys = keys + a
-    return keys
+		    keys = key + a
+    return key
 
 def judgekey1(keystr):
-    keys = ''
+    key = ''
     for a in keystr:
         if re.match(r"\d",a):
-            keys = keys + a
-    return keys
+            key = key + a
+    return key
 
-def loadconfig(file):
+def loadconfig(file,key):
 
     with open(file,"r") as f:
         jdata = json.load(f)
         pd = jdata["password"]
-        print pd
+        jdata["password"] = key
         return jdata
 
-def saveconfig(fname ,jdata):
+def saveconfig(file ,jdata):
 
     with open(file,"w") as f:
         f.write(json.dumps(jdata))
 
 
+
 if __name__ == '__main__':
-    keys = crawl()
+    key = crawl()
     file = "/etc/shadowsocks.json"
 
-    data = loadconfig(file)
+    data = loadconfig(file,key)
     saveconfig(file,data)
 
 
