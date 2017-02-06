@@ -48,7 +48,7 @@ def loadconfig(file,key):
         print "pd: "+pd
         if pd != key :
             jdata["password"] = key
-            isChanged = rue
+            isChanged = True
 
         data={"jdata":jdata,"isChanged":isChanged}
     return data
