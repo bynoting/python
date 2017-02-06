@@ -1,3 +1,4 @@
+#todo: about json file operaiton
 import urllib2,HTMLParser
 import re
 from lxml import etree
@@ -37,24 +38,36 @@ def judgekey1(keystr):
     return key
 
 def loadconfig(file,key):
-
+    data = {}
+    isChanged = False
     with open(file,"r") as f:
         jdata = json.load(f)
+        print "key:" + key
+
         pd = jdata["password"]
-        jdata["password"] = key
-        return jdata
+        print "pd: "+pd
+        if pd != key :
+            jdata["password"] = key
+            isChanged = true
 
-def saveconfig(file ,jdata):
+        data={"jdata":jdata,"isChanged":isChanged}
+    return data
 
-    with open(file,"w") as f:
-        f.write(json.dumps(jdata))
+def saveconfig(file ,data):
+    if data["isChanged"] :
+        with open(file,"w") as f:
+            f.write(json.dumps(data["jdata"]))
 
+        restartShadowserv()
+
+def restartShadowserv():
+    pass
 
 
 if __name__ == '__main__':
     key = crawl()
-    file = "/etc/shadowsocks.json"
-
+    # file = "/etc/shadowsocks.json"
+    file = "e:/shadowsocks.json"
     data = loadconfig(file,key)
     saveconfig(file,data)
 
