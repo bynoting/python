@@ -48,11 +48,11 @@ def loadconfig(file,key):
         print "pd: "+pd
         if pd != key :
             jdata["password"] = key
-            isChanged = true
+            isChanged = rue
 
         data={"jdata":jdata,"isChanged":isChanged}
     return data
-
+T
 def saveconfig(file ,data):
     if data["isChanged"] :
         with open(file,"w") as f:
