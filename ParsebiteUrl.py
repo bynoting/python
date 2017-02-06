@@ -66,8 +66,8 @@ def restartShadowserv():
 
 if __name__ == '__main__':
     key = crawl()
-    # file = "/etc/shadowsocks.json"
-    file = "e:/shadowsocks.json"
+    file = "/etc/shadowsocks.json"
+    #file = "e:/shadowsocks.json"
     data = loadconfig(file,key)
     saveconfig(file,data)
 
