@@ -52,7 +52,7 @@ def loadconfig(file,key):
 
         data={"jdata":jdata,"isChanged":isChanged}
     return data
-T
+
 def saveconfig(file ,data):
     if data["isChanged"] :
         with open(file,"w") as f:
