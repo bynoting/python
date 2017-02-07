@@ -23,7 +23,8 @@ def demo2():
             print "no data"
             return
         print out
-        list = out.split('\r\n')
+        # list = out.split('\r\n')
+        list = out.splitlines()
         print len(list)
         for line in list:
             if len(line) == 0:
