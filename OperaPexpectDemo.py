@@ -21,6 +21,7 @@ def demo2():
         out = child.before
         print out
         list = out.split('\r\n')
+        print list.count
         for line in list:
             print line
     finally:
