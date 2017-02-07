@@ -24,12 +24,17 @@ def demo2():
             return
         print out
         # list = out.split('\r\n')
-        list = out.splitlines()
+        list = out.splitlines() # its good ,no more empty line!
         print len(list)
         for line in list:
-            if len(line) == 0:
-                break
-            print line
+            # if len(line) == 0: # in splitlines ,not need judge this
+            #     break
+            print "====="
+            items = line.split()
+            for item in items:
+                print item
+
+
     finally:
         print "end"
 if __name__ == "__main__":
