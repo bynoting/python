@@ -20,7 +20,7 @@ def demo2():
         child.expect(pexpect.EOF)
         out = child.before
         print out
-        list = out.split('\r')
+        list = out.split('\r\n')
         for line in list:
             print line
     finally:
