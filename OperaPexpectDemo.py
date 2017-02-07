@@ -25,9 +25,9 @@ def demo2():
         print out
         # list = out.split('\r\n')
         list = out.splitlines() # its good ,no more empty line!
-        if len(list) < 2 return
+        if len(list) < 2: return
         items = list[1].split()
-        if len(items) < 2 return
+        if len(items) < 2: return
         pid = items[1]
         print pid
 
