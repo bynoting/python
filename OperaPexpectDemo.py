@@ -25,14 +25,12 @@ def demo2():
         print out
         # list = out.split('\r\n')
         list = out.splitlines() # its good ,no more empty line!
-        print len(list)
-        for line in list:
-            # if len(line) == 0: # in splitlines ,not need judge this
-            #     break
-            print "====="
-            items = line.split()
-            for item in items:
-                print item
+        if len(list) < 2 return
+        items = list[1].split()
+        if len(items) < 2 return
+        pid = items[1]
+        print pid
+
 
 
     finally:
