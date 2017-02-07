@@ -18,7 +18,10 @@ def demo2():
     try:
         child = pexpect.spawn("sudo lsof -i:9999")
         child.expect(pexpect.EOF)
-        print child.before
+        out = child.before
+        list = str.split()
+        for line in list:
+            print line
     finally:
         print "end"
 if __name__ == "__main__":
