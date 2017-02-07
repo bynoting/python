@@ -23,6 +23,8 @@ def demo2():
         list = out.split('\r\n')
         print len(list)
         for line in list:
+            if len(line) == 0:
+                break
             print line
     finally:
         print "end"
