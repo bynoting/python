@@ -19,7 +19,7 @@ def demo2():
         child = pexpect.spawn("sudo lsof -i:9999")
         child.expect(pexpect.EOF)
         out = child.before
-        list = out.split()
+        list = out.split('\r')
         for line in list:
             print line
     finally:
