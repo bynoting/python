@@ -19,6 +19,9 @@ def demo2():
         child = pexpect.spawn("sudo lsof -i:9999")
         child.expect(pexpect.EOF)
         out = child.before
+        if len(out)==0:
+            print "no data"
+            return
         print out
         list = out.split('\r\n')
         print len(list)
