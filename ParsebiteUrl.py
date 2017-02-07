@@ -2,6 +2,8 @@
 import urllib2,HTMLParser
 import re
 from lxml import etree
+import pexpect
+
 
 from bs4 import BeautifulSoup # pip install BeautifulSoup4
 import sys
@@ -61,6 +63,10 @@ def saveconfig(file ,data):
         restartShadowserv()
 
 def restartShadowserv():
+    child = pexpect.spawn("sudo lsof -i:9999")
+    child.timeout = 1
+    ret = child.expect([])
+
     pass
 
 
