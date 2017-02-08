@@ -30,8 +30,10 @@ def demo2():
         if len(items) < 2: return
         pidstr = items[1]
         print pidstr
-        child.sendline( "sudo kill -9 {pid}".format(pid=pidstr) )
 
+
+        child.sendline( "sudo kill -9 {pid}".format(pid=pidstr) )
+        child.logfile = sys.stdout
         child.expect(pexpect.EOF)
         print child.before
 
