@@ -13,7 +13,7 @@ def demo1():
         print "except !!!!!!!!!!!!!!!" + e.message
     finally:
         print ">>>>>>>>>>>>>>>>>>>>>>>>end"
-def demo2():
+def restartShadow():
 
     try:
         child = pexpect.spawn("sudo lsof -i:9999")
@@ -31,12 +31,12 @@ def demo2():
         pidstr = items[1]
         print pidstr
 
-
+        # new session
         child = pexpect.spawn( "sudo kill -9 {pid}".format(pid=pidstr) )
         child.logfile = sys.stdout
         child.expect(pexpect.EOF)
         # print child.before
-
+        pexpect.run("/bin/bash /home/pi/shadowsocks.sh")
         # child.sendline( "sudo /home/pi/shadowsocks.sh")
 
 

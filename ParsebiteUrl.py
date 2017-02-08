@@ -3,6 +3,7 @@ import urllib2,HTMLParser
 import re
 from lxml import etree
 import pexpect
+import OperaPexpectDemo
 
 
 from bs4 import BeautifulSoup # pip install BeautifulSoup4
@@ -63,12 +64,7 @@ def saveconfig(file ,data):
         restartShadowserv()
 
 def restartShadowserv():
-    child = pexpect.spawn("sudo lsof -i:9999")
-    child.timeout = 1
-    ret = child.expect([])
-
-    pass
-
+    OperaPexpectDemo.restartShadow()
 
 if __name__ == '__main__':
     key = crawl()
