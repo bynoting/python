@@ -32,10 +32,10 @@ def demo2():
         print pidstr
 
 
-        child.sendline( "sudo kill -9 {pid}".format(pid=pidstr) )
+        child = pexpect.spawn( "sudo kill -9 {pid}".format(pid=pidstr) )
         child.logfile = sys.stdout
         child.expect(pexpect.EOF)
-        print child.before
+        # print child.before
 
         # child.sendline( "sudo /home/pi/shadowsocks.sh")
 
