@@ -28,9 +28,9 @@ def demo2():
         if len(list) < 2: return
         items = list[1].split()
         if len(items) < 2: return
-        pid = items[1]
-        print pid
-
+        pidstr = items[1]
+        print pidstr
+        child.sendline( "sudo kill -9 {pid}".format(pid=pidstr) )
 
 
     finally:
