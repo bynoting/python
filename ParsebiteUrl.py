@@ -2,7 +2,6 @@
 import urllib2,HTMLParser
 import re
 from lxml import etree
-import pexpect
 import OperaPexpectDemo
 
 
@@ -20,7 +19,7 @@ def crawl():
 	# print content
 	htmlElement = etree.HTML(content)
 	#objectElement = htmlElement.find(".//body/div[1]/div[5]/div[3]/div/div[2]/p[3]/text()[2]") # error can't parse text()!
-	elist = htmlElement.xpath(".//body/div[1]/div[5]/div[3]/div/div[2]/p[3]/text()[2]")
+	elist = htmlElement.xpath(".//body/div[1]/div[5]/div[2]/div/div[2]/p[3]/text()[2]")
 
 	keystr = str(elist[0])
 	keys= judgekey1(keystr)
